@@ -1,0 +1,10 @@
+{% extends "layout.html" %} {% block content %}
+<div class="card mb-4">
+  <div class="card-body">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+  </div>
+</div>
+<a href="/update/{{ post.id }}" class="btn btn-warning">Düzenle</a>
+<a href="/delete/{{ post.id }}" class="btn btn-danger">Sil</a>
+{% endblock %}

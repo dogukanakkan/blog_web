@@ -1,0 +1,11 @@
+{% extends "layout.html" %} {% block content %} {% for post in posts %}
+<div class="card mb-4">
+  <div class="card-body">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content[:100] }}...</p>
+    <a href="/post/{{ post.id }}" class="btn btn-info">Devamını Oku</a>
+    <a href="/update/{{ post.id }}" class="btn btn-warning">Düzenle</a>
+    <a href="/delete/{{ post.id }}" class="btn btn-danger">Sil</a>
+  </div>
+</div>
+{% endfor %} {% endblock %}

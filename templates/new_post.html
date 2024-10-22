@@ -1,0 +1,31 @@
+{% extends "layout.html" %} {% block content %}
+<h3>{{ 'Yeni Yazı Ekle' if not update else 'Yazıyı Güncelle' }}</h3>
+<form method="POST">
+  <div class="mb-3">
+    <label for="title" class="form-label">Başlık</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      value="{{ post.title if update else '' }}"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">İçerik</label>
+    <textarea
+      class="form-control"
+      id="content"
+      name="content"
+      rows="5"
+      required
+    >
+{{ post.content if update else '' }}</textarea
+    >
+  </div>
+  <button type="submit" class="btn btn-success">
+    {{ 'Kaydet' if update else 'Yazıyı Ekle' }}
+  </button>
+</form>
+{% endblock %}
